@@ -1,5 +1,5 @@
 {
-  "name": "al-forno-chatbot",
+  "name": "gracies-chatbot",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
