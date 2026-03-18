@@ -3,7 +3,7 @@
 
   // UPDATE THIS URL after deploying to Vercel
   const BOT_URL = window.BeaconStudiosConfig?.botUrl || 
-    'https://al-forno-chatbot.vercel.app';
+    'https://gracies-chatbot.vercel.app';
 
   const style = document.createElement('style');
   style.textContent = `
@@ -11,7 +11,7 @@
     #beacon-studios-launcher {
       position: fixed; bottom: 24px; right: 24px;
       width: 56px; height: 56px; border-radius: 50%;
-      background: var(--beacon-color, #8B1A1A);
+      background: var(--beacon-color, #1C3A2E);
       border: none; cursor: pointer; z-index: 999999;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
       display: flex; align-items: center; justify-content: center;
@@ -53,14 +53,14 @@
   const iframe = document.createElement('iframe');
   iframe.id = 'beacon-studios-iframe';
   iframe.src = BOT_URL + '/embed';
-  iframe.title = 'Al Forno Chat Assistant';
+  iframe.title = "Gracie's Chat Assistant";
   iframe.allow = 'microphone';
   frameWrapper.appendChild(iframe);
 
   const launcher = document.createElement('button');
   launcher.id = 'beacon-studios-launcher';
   launcher.setAttribute('aria-label', 'Open chat');
-  launcher.innerHTML = window.BeaconStudiosConfig?.emoji || '🍕';
+  launcher.innerHTML = window.BeaconStudiosConfig?.emoji || '✨';
 
   let isOpen = true;
   launcher.addEventListener('click', () => {
@@ -71,7 +71,7 @@
       launcher.setAttribute('aria-label', 'Close chat');
     } else {
       frameWrapper.classList.remove('open');
-      launcher.innerHTML = window.BeaconStudiosConfig?.emoji || '🍕';
+      launcher.innerHTML = window.BeaconStudiosConfig?.emoji || '✨';
       launcher.setAttribute('aria-label', 'Open chat');
     }
   });
