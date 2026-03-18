@@ -1,7 +1,6 @@
 (function() {
   if (document.getElementById('beacon-studios-widget')) return;
 
-  // UPDATE THIS URL after deploying to Vercel
   const BOT_URL = window.BeaconStudiosConfig?.botUrl || 
     'https://gracies-chatbot.vercel.app';
 
