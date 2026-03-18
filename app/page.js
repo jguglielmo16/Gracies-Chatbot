@@ -2,36 +2,35 @@
 import { useState, useEffect, useRef } from "react";
 
 const restaurantInfo = {
-  name: "Al Forno Restaurant",
+  name: "Gracie's Restaurant",
   location: "Providence, Rhode Island",
-  hours: "Tuesday–Friday 5pm–10pm, Saturday 4pm–10pm, Closed Sunday & Monday",
-  address: "577 South Water Street, Providence, RI 02903",
-  phone: "401-273-9760",
-  cuisine: "Wood-fired Italian, inventor of grilled pizza",
-  priceRange: "$$$",
-  parking: "Parking and entrance are located in the REAR on Bridge Street — not on South Water Street. Please use the Bridge Street entrance.",
-  reservationLink: "https://www.exploretock.com/alfornorestaurant",
-  orderTakeout: "https://www.toasttab.com/catering/al-forno-restaurant-577-south-water-street",
+  hours: "Wednesday–Thursday 5pm–8pm, Friday–Saturday 5pm–9pm, Sunday 5pm–8pm, Closed Monday & Tuesday",
+  address: "194 Washington Street, Providence, RI 02903",
+  phone: "401-272-7811",
+  cuisine: "Contemporary American fine dining, seasonal tasting menus",
+  priceRange: "$$$$",
+  parking: "Located in Downtown Providence (DownCity). On-street parking and nearby parking lots available. Close to PPAC, the Dunkin' Donuts Center, and the RI Convention Center.",
+  reservationLink: "https://www.opentable.com/gracies-reservations-providence?restref=3222&lang=en-US",
   specialNotes: `
-    ABOUT: Al Forno opened on January 2, 1980, founded by chef-owners Johanne Killeen and George Germon. It is world-famous for inventing grilled pizza — a dish now known globally. The cuisine is rooted in rustic Italian and Southern French traditions, reimagined with the finest products from New England farms and waters, cooked in blazing hot ovens and over hardwood charcoal fires. One of the most celebrated restaurants in Providence history.
+    ABOUT: Gracie's is Providence's premier fine dining destination, named to OpenTable's Top 100 Restaurants in the United States — the only Rhode Island restaurant on that national list. Also recognized on the Global Star Wine List International Open Short List. Contemporary American cuisine with impeccable service and a warm, elegant atmosphere. The mission: to surprise and delight every guest with personal care and the freshest seasonal ingredients.
 
-    SIGNATURE DISHES: Grilled Pizza (the original — invented here, the margherita is iconic), Baked Pasta with Five Cheeses (pecorino romano, fontina, Gorgonzola, mozzarella, ricotta — baked golden and bubbly), Clams Al Forno, Short Rib Ravioli (handmade pasta), Confit Duck Legs, wood-grilled ribeyes and pork chops.
+    TASTING MENUS:
+    - Five-Course Chef's Tasting: $100 per person. Wine pairing available for $150 per person total.
+    - Seven-Course Chef's Tasting: $135 per person. Wine pairing available for $200 per person total. Includes highlights like Foie Gras and a tasting of New England Cheeses.
 
-    DESSERTS: Fresh Berry Tarts, Croque Mademoiselle (served with crème anglaise and fresh whipped cream).
+    À LA CARTE: Available for guests who prefer to build their own meal. Popular dishes include housemade gnocchi, duck, rigatoni, and steak.
 
-    DRINKS: Al Forno is known for excellent cocktails — locals say they make the best cosmos in the city. Thoughtful wine list complementing Italian and Southern French cuisine. Impressive selection of grappas and ports.
+    SIGNATURE DISHES: Housemade Gnocchi, Foie Gras, New England Cheese Tasting, Culver Farms Duck, fresh halibut and seasonal seafood, Beet Salad, seasonal desserts including Crème Brûlée.
 
-    MENU: The menu is seasonal and changes regularly based on what is freshest from New England farms and waters. Always call or email for current specials.
+    WINE PROGRAM: Award-winning. Sommelier wine pairings available with both tasting menus. BYO wine permitted (corkage fee applies).
 
-    RESERVATIONS: Reservations are through Tock at exploretock.com/alfornorestaurant. Peak hours and weekends book up weeks in advance — reserve early. Walk-ins welcome but not guaranteed.
+    PRIVATE DINING & EVENTS: Beautiful private dining room available. Contact Jada O'Brien at 401-369-7260 or jada@graciesprov.com.
 
-    TAKEOUT & CATERING: Available through Toast at toasttab.com/catering/al-forno-restaurant-577-south-water-street
+    ATMOSPHERE: Elegant yet welcoming. Fine dining without feeling stuffy. Perfect for anniversaries, birthdays, proposals, and business dinners. Wheelchair accessible. Gluten-free options available.
 
-    GIFT CARDS: Available at toasttab.com/al-forno-restaurant-577-south-water-street/giftcards
+    PAYMENTS: Credit, Debit, Apple Pay, and Google Pay accepted.
 
-    ATMOSPHERE: Rustic, warm, and artistic — reflecting the fine arts backgrounds of the founders. Riverfront setting. Beloved Providence institution for over 45 years.
-
-    CONTACT: Phone 401-273-9760, email mail@alforno.com
+    CONTACT: Phone 401-272-7811, email ellen@graciesprov.com, events: jada@graciesprov.com
   `
 };
 
@@ -40,15 +39,15 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: `Welcome to Al Forno! 🍕 We're Providence's legendary wood-fired Italian restaurant — inventors of grilled pizza since 1980. I'm here to help you with:
+      content: `Welcome to Gracie's! ✨ Providence's award-winning fine dining destination — named to OpenTable's Top 100 Restaurants in America. I'm here to help you with:
 
-- 📅 Reservations & booking (via Tock)
-- 🍽️ Menu & signature dishes
-- 🚗 Hours, location & parking
-- 🎉 Private events & special occasions
-- 🥡 Takeout & catering
+- 📅 Reservations & tasting menu details
+- 🍽️ Our 5 and 7-course chef's tasting menus
+- 🍷 Wine pairings & cocktails
+- 🎉 Private dining & special occasions
+- 🕐 Hours & location
 
-What can I help you with today?`
+What can I help you plan tonight?`
     }
   ]);
   const [input, setInput] = useState("");
@@ -115,13 +114,13 @@ What can I help you with today?`
             borderRadius: "16px",
             overflow: "hidden",
             boxShadow: "0 8px 32px rgba(0,0,0,0.18)",
-            border: "1px solid #e0d6c8",
+            border: "1px solid #d8e4de",
             display: "flex",
             flexDirection: "column",
           }}>
 
             <div style={{
-              background: "#8B1A1A",
+              background: "#1C3A2E",
               padding: "14px 16px",
               display: "flex",
               alignItems: "center",
@@ -132,17 +131,17 @@ What can I help you with today?`
                 width: "36px", height: "36px", borderRadius: "50%",
                 background: "rgba(255,255,255,0.15)", display: "flex",
                 alignItems: "center", justifyContent: "center", fontSize: "18px"
-              }}>🍕</div>
+              }}>✨</div>
               <div style={{ flex: 1 }}>
-                <div style={{ color: "#f8e8e8", fontSize: "14px", fontWeight: "bold" }}>
+                <div style={{ color: "#e8f4ee", fontSize: "14px", fontWeight: "bold" }}>
                   {restaurantInfo.name}
                 </div>
-                <div style={{ color: "rgba(248,232,232,0.7)", fontSize: "11px" }}>
+                <div style={{ color: "rgba(232,244,238,0.7)", fontSize: "11px" }}>
                   Typically replies instantly
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} style={{
-                background: "none", border: "none", color: "#f8e8e8",
+                background: "none", border: "none", color: "#e8f4ee",
                 fontSize: "24px", cursor: "pointer", padding: "0 4px",
                 lineHeight: 1, minWidth: "36px", minHeight: "36px"
               }}>×</button>
@@ -151,7 +150,7 @@ What can I help you with today?`
             <div style={{
               overflowY: "auto",
               padding: "14px",
-              background: "#fdf8f4",
+              background: "#f4f8f6",
               display: "flex",
               flexDirection: "column",
               gap: "10px",
@@ -165,13 +164,13 @@ What can I help you with today?`
                   {msg.role === "assistant" && (
                     <div style={{
                       width: "26px", height: "26px", borderRadius: "50%",
-                      background: "#8B1A1A", display: "flex", alignItems: "center",
+                      background: "#1C3A2E", display: "flex", alignItems: "center",
                       justifyContent: "center", fontSize: "12px", flexShrink: 0
-                    }}>🍕</div>
+                    }}>✨</div>
                   )}
                   <div style={{
-                    background: msg.role === "user" ? "#8B1A1A" : "#fff",
-                    color: msg.role === "user" ? "#f8e8e8" : "#3a1a1a",
+                    background: msg.role === "user" ? "#1C3A2E" : "#fff",
+                    color: msg.role === "user" ? "#e8f4ee" : "#1a2e24",
                     padding: "9px 13px",
                     borderRadius: msg.role === "user" ? "16px 16px 2px 16px" : "16px 16px 16px 2px",
                     maxWidth: "75%",
@@ -188,13 +187,13 @@ What can I help you with today?`
                 <div style={{ display: "flex", gap: "8px", alignItems: "flex-end" }}>
                   <div style={{
                     width: "26px", height: "26px", borderRadius: "50%",
-                    background: "#8B1A1A", display: "flex", alignItems: "center",
+                    background: "#1C3A2E", display: "flex", alignItems: "center",
                     justifyContent: "center", fontSize: "12px"
-                  }}>🍕</div>
+                  }}>✨</div>
                   <div style={{
                     background: "#fff", padding: "9px 13px",
                     borderRadius: "16px 16px 16px 2px",
-                    fontSize: "13px", color: "#aa7a7a"
+                    fontSize: "13px", color: "#7a9a88"
                   }}>Typing...</div>
                 </div>
               )}
@@ -205,7 +204,7 @@ What can I help you with today?`
               display: "flex",
               padding: isMobile ? "14px" : "12px",
               background: "#fff",
-              borderTop: "1px solid #e8d0d0",
+              borderTop: "1px solid #d0e8da",
               gap: "8px",
               flexShrink: 0
             }}>
@@ -219,14 +218,14 @@ What can I help you with today?`
                   flex: 1,
                   padding: isMobile ? "12px 16px" : "9px 14px",
                   borderRadius: "20px",
-                  border: "1px solid #e8d0d0",
+                  border: "1px solid #d0e8da",
                   fontSize: isMobile ? "16px" : "13px",
                   outline: "none",
                   fontFamily: "Georgia, serif"
                 }}
               />
               <button onClick={sendMessage} style={{
-                background: "#8B1A1A", color: "#f8e8e8", border: "none",
+                background: "#1C3A2E", color: "#e8f4ee", border: "none",
                 borderRadius: "50%",
                 width: isMobile ? "44px" : "36px",
                 height: isMobile ? "44px" : "36px",
@@ -240,13 +239,13 @@ What can I help you with today?`
           onClick={() => setIsOpen(!isOpen)}
           style={{
             width: "56px", height: "56px", borderRadius: "50%",
-            background: "#8B1A1A", border: "none", cursor: "pointer",
+            background: "#1C3A2E", border: "none", cursor: "pointer",
             fontSize: "24px", boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
             display: "flex", alignItems: "center", justifyContent: "center",
             alignSelf: "flex-end",
             flexShrink: 0
           }}>
-          {isOpen ? "×" : "🍕"}
+          {isOpen ? "×" : "✨"}
         </button>
 
       </div>
